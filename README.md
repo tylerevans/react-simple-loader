@@ -2,6 +2,8 @@
 
 This is a simple loading component to include in your React application.
 
+[View Demo](http://www.tylerevans.com.au/repositories/react-simple-loader)
+
 To use, do the following:
 
 ```
