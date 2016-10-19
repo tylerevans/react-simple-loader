@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require("webpack");
 
 module.exports = {
     entry: './index.js',
@@ -17,5 +18,10 @@ module.exports = {
             loader: 'babel',
             exclude: /node_modules/
         }]
-    }
+    },
+		plugins: [
+			new webpack.optimize.UglifyJsPlugin({
+				comments: false
+			})
+		]
 }

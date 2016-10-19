@@ -1,17 +1,48 @@
-# React Component Template
+# React Simple Loading Component
 
-### Template to publish your react components to NPM.
-
-Having developed many React Components I have reused across multiple projects (such as loading screen), rather than copy and paste the code to new project, this template can be used to build and publish your own components to NPM.
+This is a simple loading component to include in your React application.
 
 To use, do the following:
 
- * Develop your component in index.js
- * npm install any specific libraries required by your component.
- * Build the component to dist/build.js
- * Publish to NPM
-
-```javascript
-npm install
-npm run build
 ```
+npm install react-simple-loader
+```
+
+An example: Sample.jsx
+
+```
+import { Component, PropTypes } from "react";
+import ReactSimpleLoader from "react-simple-loader";
+
+class Sample extends Component {
+	render() {
+		const { item } = this.props;
+
+		if (!item) {
+			return <ReactSimpleLoader/>
+		}
+
+		return (
+			<div>Hello World</div>
+		);
+	}
+}
+
+Sample.propTypes = {
+	item: PropTypes.object
+}
+
+export default Sample;
+```
+
+There are various props you may customise:
+
+| prop        | type           | example  |
+| ------------- |:-------------:| -----:|
+| color      | string | "#fff" |
+| top     | string      |   "100px" |
+| backgroundColor | string      |  "rgba(0,0,0,0.5)" |
+| borderRadius | string      |  "4px" |
+| fullScreen | boolean      |  false |
+
+For any issues, please use github issues.
